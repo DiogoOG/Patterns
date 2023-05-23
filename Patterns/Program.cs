@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Patterns
+﻿namespace Patterns
 {
     public class Program
     {
@@ -32,7 +26,7 @@ namespace Patterns
 
             // Builder
             
-            Coolmatica coolmatica = new Coolmatica();
+            PcShop coolmatica = new PcShop();
             coolmatica.Builder = new LaptopBuilder();
 
             Pc pc_a = coolmatica.BuildNoLightPc();
@@ -43,7 +37,7 @@ namespace Patterns
 
             // State
 
-            Car pijo = new Car();
+            Automobile pijo = new Automobile();
 
             pijo.PressPedal();
             pijo.TurnKey();
@@ -51,6 +45,21 @@ namespace Patterns
             pijo.TurnKey();
             pijo.PressPedal();
 
+            // Observer
+
+            FastFoodPlace burgerKing = new FastFoodPlace();
+
+            burgerKing.TakeOrder(new Client());
+            burgerKing.TakeOrder(new Client());
+
+            burgerKing.AnnounceOrder(42);
+
+            burgerKing.TakeOrder(new Client());
+            burgerKing.TakeOrder(new Client());
+            burgerKing.TakeOrder(new Client());
+            burgerKing.TakeOrder(new Client());
+
+            burgerKing.AnnounceOrder(62);
         }
     }
 }

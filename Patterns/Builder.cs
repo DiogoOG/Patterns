@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Patterns
+﻿namespace Patterns
 {
     public class Pc
     {
@@ -105,11 +98,11 @@ namespace Patterns
         }
     }
 
-    public class Coolmatica
+    public class PcShop
     {
         public IPcBuilder Builder { get; set; }
 
-        public Coolmatica()
+        public PcShop()
         {
             Builder = new LaptopBuilder();
         }
