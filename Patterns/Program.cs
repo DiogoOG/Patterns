@@ -41,6 +41,15 @@ namespace Patterns
 
             pc_a = coolmatica.BuildNoLightPc();
 
+            // State
+
+            Car pijo = new Car();
+
+            pijo.PressPedal();
+            pijo.TurnKey();
+            pijo.PressPedal();
+            pijo.TurnKey();
+            pijo.PressPedal();
 
         }
     }
