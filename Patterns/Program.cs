@@ -10,14 +10,38 @@ namespace Patterns
     {
         public static void Main(string[] args)
         {
-            CarFactory a = new RedCarFactory();
-            CarFactory b = new BlueCarFactory();
+            // Singleton
 
-            ICar x = a.Fabricate();
-            ICar y = b.Fabricate();
+            Tree tree_a = Tree.Instance;
+            Tree tree_b = Tree.Instance;
 
-            x.Vroom();
-            y.Vroom();
+            Console.WriteLine(tree_a.HasLeaves);
+            tree_b.CutLeaves();
+            Console.WriteLine(tree_a.HasLeaves);
+
+            // Factory
+
+            CarFactory fact_a = new RedCarFactory();
+            CarFactory fact_b = new BlueCarFactory();
+
+            ICar car_x = fact_a.Fabricate();
+            ICar car_y = fact_b.Fabricate();
+
+            car_x.Vroom();
+            car_y.Vroom();
+
+            // Builder
+            
+            Coolmatica coolmatica = new Coolmatica();
+            coolmatica.Builder = new LaptopBuilder();
+
+            Pc pc_a = coolmatica.BuildNoLightPc();
+
+            coolmatica.Builder = new DesktopBuilder();
+
+            pc_a = coolmatica.BuildNoLightPc();
+
+
         }
     }
 }
