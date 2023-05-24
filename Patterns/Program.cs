@@ -94,6 +94,16 @@
 
             treasurer.RestoreLastSave();
             Console.WriteLine($"Treasurer has {treasurer.CountCoins()}");
+
+            // Decorator
+
+            Pasta plate = new Spaghetti();
+
+            plate = new Cream(plate);
+            Console.WriteLine(plate.ShowPlate());
+
+            plate = new FreshShrooms(plate);
+            Console.WriteLine(plate.ShowPlate());
         }
     }
 }
