@@ -8,7 +8,7 @@ namespace Patterns
 {
     public interface IBattleStrategy
     {
-        void Execute();
+        public abstract void Execute();
     }
 
     public class BonkStrategy : IBattleStrategy

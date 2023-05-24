@@ -27,12 +27,11 @@
             // Builder
             
             PcShop coolmatica = new PcShop();
-            coolmatica.Builder = new LaptopBuilder();
 
+            coolmatica.Builder = new LaptopBuilder();
             Pc pc_a = coolmatica.BuildNoLightPc();
 
             coolmatica.Builder = new DesktopBuilder();
-
             pc_a = coolmatica.BuildNoLightPc();
 
             // State
@@ -72,6 +71,29 @@
 
             player.Strategy = new StabbyStrategy();
             player.Attack();
+
+            // Memento
+
+            Treasurer treasurer = new Treasurer();
+
+            Console.WriteLine($"Treasurer has {treasurer.CountCoins()}");
+
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            Console.WriteLine($"Treasurer has {treasurer.CountCoins()}");
+
+            treasurer.SaveState();
+
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            treasurer.AddCoin();
+            Console.WriteLine($"Treasurer has {treasurer.CountCoins()}");
+
+            treasurer.RestoreLastSave();
+            Console.WriteLine($"Treasurer has {treasurer.CountCoins()}");
         }
     }
 }
