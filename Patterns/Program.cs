@@ -60,6 +60,16 @@
             burgerKing.TakeOrder(new Client());
 
             burgerKing.AnnounceOrder(62);
+
+            // Strategy
+
+            Player player = new Player();
+
+            player.Attack();
+
+            player.Strategy = new ShootStrategy();
+
+            player.Attack();
         }
     }
 }
