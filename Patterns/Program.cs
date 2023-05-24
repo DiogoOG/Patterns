@@ -68,7 +68,9 @@
             player.Attack();
 
             player.Strategy = new ShootStrategy();
+            player.Attack();
 
+            player.Strategy = new StabbyStrategy();
             player.Attack();
         }
     }
